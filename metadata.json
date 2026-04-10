@@ -1,0 +1,5 @@
+{
+  "name": "Mustafa’s Döner — Schwedt/Oder",
+  "description": "Premium Döner experience in Schwedt/Oder. Real ingredients, Berlin street vibe, and high-end UI.",
+  "requestFramePermissions": ["geolocation"]
+}
