@@ -1,4 +1,4 @@
-import { MenuCategory, Translation, Language } from './types';
+import { MenuCategory, Translation, Language, Review } from './types';
 
 export const MENU_DATA: Record<Language, MenuCategory[]> = {
   de: [
@@ -495,11 +495,89 @@ export const MENU_DATA: Record<Language, MenuCategory[]> = {
   ]
 };
 
+export const REVIEWS: Review[] = [
+  {
+    author: "Lukas M.",
+    text: "Ich war sehr positiv überrascht von diesem Döner-Restaurant! Das Fleisch war saftig und gut gewürzt, das Brot frisch und knusprig, und die Soßen hausgemacht – besonders die Knoblauchsoße war ein Highlight. Auch die Portion war großzügig, und das Preis-Leistungs-Verhältnis stimmt. Das Personal war freundlich und schnell, das Restaurant sauber und gemütlich eingerichtet. Ich komme auf jeden Fall wieder!",
+    rating: 5
+  },
+  {
+    author: "Sarah K.",
+    text: "Einen so guten Döner, hab ich ewig nicht mehr bekommen. Super.",
+    rating: 5
+  },
+  {
+    author: "Maximilian W.",
+    text: "Wenn du in Schwedt unterwegs bist und der Magen knurrt, führt kein Weg an diesem Döner-Imbiss vorbei. Der Döner? Ein Gedicht. Frisch, saftig, würzig – einfach lecker. Man schmeckt sofort: Hier wird mit Liebe und Qualität gearbeitet. Die Preise? Stabil wie Beton. In Zeiten, in denen überall alles teurer wird, bleibt dieser Laden fair. Da isst man gern auch mal öfter. Was mir besonders positiv aufgefallen ist: Das Personal. Immer freundlich, immer mit einem Lächeln – selbst wenn der Laden voll ist. So wünscht man sich das! Und wer mal keinen Döner möchte (warum auch immer…), wird hier trotzdem fündig: Es gibt auch andere Gerichte auf der Karte, die genauso überzeugen. Fazit: Für mich ganz klar der beste Döner-Imbiss in Schwedt. Wer woanders hingeht, ist selbst schuld.",
+    rating: 5
+  },
+  {
+    author: "Christian R.",
+    text: "Ich bin absolut begeistert von meinem Besuch im Dönerladen Musterfar! Der Döner war einfach lecker, die Fleischqualität war hervorragend und die Soßen waren perfekt abgestimmt. Ich habe mich wie im Urlaub gefühlt, so gut war das Essen! Aber nicht nur das Essen war großartig, auch das Ambiente ist einfach toll! Der Laden ist modern und stylisch eingerichtet. Die Mitarbeiter waren freundlich und aufmerksam, ich habe mich sofort wohl gefühlt. Ich kann Musterfar ohne Einschränkung empfehlen! Wenn Sie nach einem leckeren Döner suchen, der auch noch in einem schönen Ambiente serviert wird, sind Sie hier genau richtig. Ich werde definitiv wiederkommen und habe bereits meinen Freunden davon erzählt. Fünf Sterne sind noch zu wenig, ich würde zehn Sterne geben, wenn ich könnte! Musterfar ist definitiv einer der besten Dönerläden, den ich je besucht habe.",
+    rating: 5
+  },
+  {
+    author: "Paul M.",
+    text: "Ich war dort Döner essen der Dönner schmeckt sehr lecker alles sehr frisch Mitarbeiter sehr freundlich der Laden in sich sehr sauber kann ich wirklich nur weiter empfehlen!!!",
+    rating: 5
+  },
+  {
+    author: "Julia S.",
+    text: "Wie immer sehr lecker , Der schnitzel Döner ist mega , das Hähnchen liebe ich . Sie sind sehr kinder freundlich meine Kids essen immer Dönerbox oder Cheesburger.",
+    rating: 5
+  },
+  {
+    author: "Kamil P.",
+    text: "Mega Soßen, gutes Fleisch – ich empfehle es von ganzem Herzen. Ich komme extra aus Polen hierher, weil es nah ist und man richtig guten Kebab essen kann, wenn einen die Lust packt. 😇",
+    rating: 5
+  },
+  {
+    author: "Anja B.",
+    text: "Die Atmosphäre war sehr angenehm und sauber, es gab keine Parkplatzprobleme. Außerdem war der Döner sehr lecker und großzügig portioniert. Das freundliche Personal und ihre Aufmerksamkeit haben mir sehr gefallen.",
+    rating: 5
+  },
+  {
+    author: "Thomas H.",
+    text: "Alles schmeckt soweit außer das Fleisch. Am ZOB schmeckt das Fleisch viel besser und auch die Soßen am ZOB sind besser. Cheesburger und Co. schmecken bei Mustafa 1 A.",
+    rating: 3
+  },
+  {
+    author: "Dennis K.",
+    text: "Fünf Sterne ☝🏼 ⭐️⭐️⭐️⭐️⭐️ ✅Sehr guter Döner in Schwedt. ✅Mustafas Döner hat auch “der Gerät” die 3 Mitarbeiter arbeiten sehr zügig die Bestellungen ab. ✅Alles gut Zwei kleine Kritikpunkte habe ich ❌Kartenzahlung sollte im Jahr 2024 Standard sein. ❌Ich habe ganz genau eine Serviette bekommen. Der Mitarbeiter hätte mir bestimmt auf Nachfrage noch mehr gegeben . Trotzdem find ich das immer komisch. Die Punkte reichen nicht für einen Stern Abzug. Weiter so👍🏻👍🏻",
+    rating: 5
+  },
+  {
+    author: "Melanie F.",
+    text: "Waren zum ersten Mal und das letzte Mal hier essen. Vom Versprechen \"Der beste Döner in Brandenburg\" ist dieser Anbieter weit entfernt. Dürüm für 8€, dafür das Fleisch kalt und lappig, Gemüse qualitativ ok, Soße (Kräuter) schmeckte nicht wie hausgemacht, Location selbst wirkte einladend und sauber, schade! Hätte gerne eine bessere Bewertung abgegeben.",
+    rating: 2
+  },
+  {
+    author: "Andreas G.",
+    text: "Das Essen war wirklich ausgezeichnet! Der Döner war frisch, saftig und sehr lecker – besonders die Soßen waren einfach super und haben perfekt gepasst. Auch die Mitarbeiter waren unglaublich freundlich und aufmerksam. Man fühlt sich hier wirklich willkommen. Ich komme auf jeden Fall wieder!",
+    rating: 5
+  },
+  {
+    author: "Stefan B.",
+    text: "War Pfingstmontag dort. Trotz einer langen Schlange, ca. 10 Personen, ging es sehr flott. Lag aber wahrscheinlich auch daran das 3-4 Mitarbeiter sich um das Essen gekümmert haben. Mehrere Soßen zur Auswahl. Ich hatte Kräuter und scharfe Soße, die war nicht zu scharf hatte aber einen leichten Bums ;) Alles Soßen selbstgemacht und das schmeckt man auch. Salate alles frisch und wurde ständig nachgelegt.. Kartenzahlung ist nicht möglich , dafür müsste ich nen halben Stern abziehen aber das geht nicht.",
+    rating: 5
+  },
+  {
+    author: "Monika W.",
+    text: "Gut schmeckendes Essen zu normalen Preisen für großzügige Portionen. Saubere Räumlichkeiten und netter Service.",
+    rating: 5
+  },
+  {
+    author: "Kevin S.",
+    text: "Rezension: Mustafas Döner – enttäuschende Erfahrung 🥙 Schon beim Bestellen wurden wir gezwungen, draußen in der Kälte zu warten, obwohl innen Platz war – kein guter Start. Beim Döner selbst fiel sofort auf, dass viel zu viel Soße verwendet wurde (mehrere große Kellen). Beim ersten Bissen dann die Enttäuschung: Das Fleisch war kalt, das Brot hat nach Pappe geschmeckt und die Soße war extrem fettig und lag schwer im Magen. So schlimm, dass wir den Döner nicht aufgegessen haben. Auf unsere Beschwerde reagierte der Verkäufer nur mit „Ist doch warm. Ist doch frisch.“ – obwohl das offensichtlich nicht der Fall war. Keine Einsicht, kein Entgegenkommen. Fazit: Sehr schlechte Qualität und kein guter Service. Wir kommen definitiv nicht wieder. ❌ Empfehlung stattdessen: City Grill 2 in Templin – deutlich bessere Qualität und sogar günstiger. 🌟",
+    rating: 1
+  }
+];
+
 export const TRANSLATIONS: Record<Language, Translation> = {
   de: {
     hero: {
       title: "Das echte Döner-Erlebnis in Schwedt",
-      subtitle: "Frische Zutaten, Berliner Street-Vibe & Premium Qualität.",
+      subtitle: "Frische Zutaten & Premium Qualität.",
       cta_visit: "Besuchen Sie uns",
       cta_menu: "Speisekarte"
     },
@@ -521,6 +599,12 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       phone: "03332 5827819",
       get_directions: "Route planen"
     },
+    reviews: {
+      title: "Kundenbewertungen",
+      total_reviews: "1200+ Bewertungen",
+      show_more: "Alle Bewertungen anzeigen",
+      show_less: "Weniger anzeigen"
+    },
     footer: {
       visit_today: "Besuchen Sie uns heute",
       rights: "Alle Rechte vorbehalten."
@@ -529,7 +613,7 @@ export const TRANSLATIONS: Record<Language, Translation> = {
   en: {
     hero: {
       title: "The Real Döner Experience in Schwedt",
-      subtitle: "Fresh ingredients, Berlin street vibe & premium quality.",
+      subtitle: "Fresh ingredients & premium quality.",
       cta_visit: "Visit Us Now",
       cta_menu: "View Menu"
     },
@@ -551,6 +635,12 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       phone: "03332 5827819",
       get_directions: "Get Directions"
     },
+    reviews: {
+      title: "Customer Reviews",
+      total_reviews: "1200+ Reviews",
+      show_more: "Show all reviews",
+      show_less: "Show less"
+    },
     footer: {
       visit_today: "Visit Us Today",
       rights: "All rights reserved."
@@ -559,7 +649,7 @@ export const TRANSLATIONS: Record<Language, Translation> = {
   ar: {
     hero: {
       title: "تجربة الدونر الحقيقية في شفيدت",
-      subtitle: "مكونات طازجة، أجواء شوارع برلين وجودة ممتازة.",
+      subtitle: "مكونات طازجة وجودة ممتازة.",
       cta_visit: "زورونا الآن",
       cta_menu: "قائمة الطعام"
     },
@@ -581,6 +671,12 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       phone: "03332 5827819",
       get_directions: "احصل على الاتجاهات"
     },
+    reviews: {
+      title: "تقييمات العملاء",
+      total_reviews: "أكثر من ١٢٠٠ تقييم",
+      show_more: "عرض جميع التقييمات",
+      show_less: "عرض أقل"
+    },
     footer: {
       visit_today: "زورونا اليوم",
       rights: "جميع الحقوق محفوظة."
@@ -589,7 +685,7 @@ export const TRANSLATIONS: Record<Language, Translation> = {
   tr: {
     hero: {
       title: "Schwedt'teki Gerçek Döner Deneyimi",
-      subtitle: "Taze malzemeler, Berlin sokak havası ve premium kalite.",
+      subtitle: "Taze malzemeler ve premium kalite.",
       cta_visit: "Bizi Ziyaret Edin",
       cta_menu: "Menüyü Görüntüle"
     },
@@ -610,6 +706,12 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       hours: "Her gün 10:00 – 20:30",
       phone: "03332 5827819",
       get_directions: "Yol Tarifi Al"
+    },
+    reviews: {
+      title: "Müşteri Değerlendirmeleri",
+      total_reviews: "1200+ Değerlendirme",
+      show_more: "Tüm değerlendirmeleri göster",
+      show_less: "Daha az göster"
     },
     footer: {
       visit_today: "Bugün Bizi Ziyaret Edin",

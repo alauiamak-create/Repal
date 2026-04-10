@@ -14,19 +14,19 @@ import {
   X, 
   Globe, 
   Star, 
-  Instagram, 
   ArrowUpRight,
   UtensilsCrossed,
   Zap,
   Scale
 } from 'lucide-react';
 import { Language } from './types';
-import { MENU_DATA, TRANSLATIONS } from './constants';
+import { MENU_DATA, TRANSLATIONS, REVIEWS } from './constants';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('de');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
+  const [showAllReviews, setShowAllReviews] = useState(false);
   const t = TRANSLATIONS[lang];
   const isRTL = lang === 'ar';
 
@@ -44,6 +44,8 @@ export default function App() {
     }
     setIsMenuOpen(false);
   };
+
+  const displayedReviews = showAllReviews ? REVIEWS : REVIEWS.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-brand-black selection:bg-brand-neon selection:text-brand-black">
@@ -67,6 +69,7 @@ export default function App() {
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('menu')} className="text-sm font-medium hover:text-brand-orange transition-colors uppercase tracking-wider">{t.nav.menu}</button>
             <button onClick={() => scrollToSection('experience')} className="text-sm font-medium hover:text-brand-orange transition-colors uppercase tracking-wider">{t.nav.about}</button>
+            <button onClick={() => scrollToSection('reviews')} className="text-sm font-medium hover:text-brand-orange transition-colors uppercase tracking-wider">{t.reviews.title}</button>
             <button onClick={() => scrollToSection('location')} className="text-sm font-medium hover:text-brand-orange transition-colors uppercase tracking-wider">{t.nav.location}</button>
           </div>
 
@@ -121,6 +124,7 @@ export default function App() {
             <div className="flex flex-col gap-8">
               <button onClick={() => scrollToSection('menu')} className="text-4xl font-display font-bold text-left">{t.nav.menu}</button>
               <button onClick={() => scrollToSection('experience')} className="text-4xl font-display font-bold text-left">{t.nav.about}</button>
+              <button onClick={() => scrollToSection('reviews')} className="text-4xl font-display font-bold text-left">{t.reviews.title}</button>
               <button onClick={() => scrollToSection('location')} className="text-4xl font-display font-bold text-left">{t.nav.location}</button>
             </div>
             <div className="mt-auto pt-12 border-t border-white/10 flex flex-col gap-4">
@@ -139,13 +143,8 @@ export default function App() {
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://picsum.photos/seed/mustafas-doner-schwedt/1920/1080" 
-            alt="Mustafa's Döner Store Front" 
-            className="w-full h-full object-cover opacity-40 scale-110"
-            referrerPolicy="no-referrer"
-          />
+        <div className="absolute inset-0 z-0 bg-brand-black">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-orange/10 via-transparent to-transparent opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-black via-transparent to-brand-black" />
         </div>
 
@@ -157,7 +156,7 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 bg-brand-neon/10 border border-brand-neon/20 px-4 py-2 rounded-full mb-6">
               <Star className="w-4 h-4 text-brand-neon fill-brand-neon" />
-              <span className="text-brand-neon text-xs font-bold uppercase tracking-widest">4.8 Google Rating</span>
+              <span className="text-brand-neon text-xs font-bold uppercase tracking-widest">{t.reviews.total_reviews}</span>
             </div>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black mb-8 leading-[0.9] tracking-tighter uppercase">
               {t.hero.title.split(' ').map((word, i) => (
@@ -192,7 +191,7 @@ export default function App() {
             {[...Array(10)].map((_, i) => (
               <div key={i} className="flex items-center gap-12">
                 <span className="text-2xl font-display font-black uppercase tracking-widest opacity-20">Fresh Ingredients</span>
-                <span className="text-brand-neon text-2xl font-display font-black uppercase tracking-widest">Berlin Street Food</span>
+                <span className="text-brand-neon text-2xl font-display font-black uppercase tracking-widest">Premium Quality</span>
                 <span className="text-2xl font-display font-black uppercase tracking-widest opacity-20">Mustafa's Döner</span>
                 <span className="text-brand-orange text-2xl font-display font-black uppercase tracking-widest">Schwedt/Oder</span>
               </div>
@@ -284,18 +283,15 @@ export default function App() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="hidden lg:block sticky top-32 h-[600px] rounded-3xl overflow-hidden border border-white/10">
-              <img 
-                src={`https://picsum.photos/seed/food-${activeCategory}/800/1200`} 
-                alt="Food Preview" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent" />
+            <div className="hidden lg:flex items-center justify-center sticky top-32 h-[600px] rounded-3xl overflow-hidden border border-white/10 bg-white/5">
+              <div className="text-center p-12">
+                <UtensilsCrossed className="w-20 h-20 text-brand-orange mx-auto mb-8 opacity-20" />
+                <p className="text-2xl font-display font-black uppercase tracking-widest opacity-20">Fresh & Tasty</p>
+              </div>
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="glass p-6 rounded-2xl">
                   <p className="text-sm font-medium italic text-white/80">
-                    "The best döner I've had outside of Berlin. The bread is perfectly crispy and the meat is high quality."
+                    "The best döner I've ever had. The bread is perfectly crispy and the meat is high quality."
                   </p>
                   <div className="flex items-center gap-2 mt-4">
                     <div className="flex text-brand-orange">
@@ -334,6 +330,69 @@ export default function App() {
                 <p className="text-white/60 leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section id="reviews" className="py-32 bg-brand-black/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+            <div>
+              <span className="text-brand-orange font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Testimonials</span>
+              <h2 className="text-5xl md:text-7xl font-display font-black uppercase leading-none">{t.reviews.title}</h2>
+            </div>
+            <div className="flex items-center gap-4 glass px-6 py-4 rounded-2xl">
+              <div className="text-center">
+                <div className="text-3xl font-display font-black text-brand-neon">4.8</div>
+                <div className="flex text-brand-orange">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-current" />)}
+                </div>
+              </div>
+              <div className="h-10 w-px bg-white/10 mx-2" />
+              <div className="text-sm font-bold text-white/40 uppercase tracking-widest">{t.reviews.total_reviews}</div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence>
+              {displayedReviews.map((review, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="p-8 bg-white/5 rounded-3xl border border-white/5 hover:border-brand-neon/20 transition-all flex flex-col h-full"
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-brand-orange/20 rounded-full flex items-center justify-center font-bold text-brand-orange">
+                        {review.author[0]}
+                      </div>
+                      <span className="font-bold">{review.author}</span>
+                    </div>
+                    <div className="flex text-brand-orange">
+                      {[...Array(5)].map((_, starIdx) => (
+                        <Star 
+                          key={starIdx} 
+                          className={`w-3 h-3 ${starIdx < review.rating ? 'fill-current' : 'text-white/10'}`} 
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-white/60 leading-relaxed italic flex-grow">"{review.text}"</p>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setShowAllReviews(!showAllReviews)}
+              className="glass px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white/20 transition-all"
+            >
+              {showAllReviews ? t.reviews.show_less : t.reviews.show_more}
+            </button>
           </div>
         </div>
       </section>
@@ -418,7 +477,7 @@ export default function App() {
                 </span>
               </div>
               <p className="text-white/40 max-w-xs">
-                The real Berlin street food experience in the heart of Schwedt/Oder.
+                The real street food experience in the heart of Schwedt/Oder.
               </p>
             </div>
 

@@ -12,6 +12,13 @@ export interface MenuCategory {
   items: MenuItem[];
 }
 
+export interface Review {
+  author: string;
+  text: string;
+  rating: number;
+  date?: string;
+}
+
 export interface Translation {
   hero: {
     title: string;
@@ -36,6 +43,12 @@ export interface Translation {
     hours: string;
     phone: string;
     get_directions: string;
+  };
+  reviews: {
+    title: string;
+    total_reviews: string;
+    show_more: string;
+    show_less: string;
   };
   footer: {
     visit_today: string;
